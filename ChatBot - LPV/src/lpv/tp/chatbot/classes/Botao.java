@@ -1,13 +1,13 @@
-package lpv.chatbot.classes;
+package lpv.tp.chatbot.classes;
 
 public class Botao extends ConteudoPesquisado {
-	
+
 	public Botao() {
 		super();
 		this.setDescricaoComponente("Button");
 		this.setIdPaneExibicaoImagem("");
 	}
-	
+
 	@Override
 	public String toString() {
 		StringBuilder exemploCodigo = new StringBuilder();

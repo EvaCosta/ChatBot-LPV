@@ -1,13 +1,13 @@
-package lpv.chatbot.classes;
+package lpv.tp.chatbot.classes;
 
 public class PainelSplit extends ConteudoPesquisado {
-	
+
 	public PainelSplit(){
 		super();
 		this.setDescricaoComponente("SplitPane");
 		this.setIdPaneExibicaoImagem("");
 	}
-	
+
 	@Override
 	public String toString() {
 		StringBuilder exemploCodigo = new StringBuilder();
@@ -18,7 +18,7 @@ public class PainelSplit extends ConteudoPesquisado {
 		exemploCodigo.append(" SplitPane meuSplitPane = new SplitPane(new Label(\"Lado 1\"),new Label(\"Lado 2\"),new Label(\"Lado 3\"));");
 		exemploCodigo.append("\n\n");
 		exemploCodigo.append("/*O construtor possui uma lista de parâmetros de tamanho vaiável \n* então a quantidade de componentes passadas para ele pode ter \n* o número necessário de acordo com a necessidade.\n*/");
-		
+
 		return exemploCodigo.toString();
 	}//toString()
 }

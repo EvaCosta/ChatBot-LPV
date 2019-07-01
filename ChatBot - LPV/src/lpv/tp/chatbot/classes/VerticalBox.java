@@ -1,13 +1,13 @@
-package lpv.chatbot.classes;
+package lpv.tp.chatbot.classes;
 
 public class VerticalBox extends ConteudoPesquisado {
-	
+
 	public VerticalBox(){
 		super();
 		this.setDescricaoComponente("VBox");
 		this.setIdPaneExibicaoImagem("");
 	}
-	
+
 	@Override
 	public String toString() {
 		StringBuilder exemploCodigo = new StringBuilder();
