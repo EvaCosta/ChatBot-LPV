@@ -19,7 +19,7 @@
       </Label>
       <Pane layoutX="792.0" layoutY="650.0" prefHeight="25.0" prefWidth="85.0" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="10.0">
          <children>
-            <JFXButton buttonType="RAISED" layoutY="-4.0" prefHeight="31.0" prefWidth="86.0" ripplerFill="#0278ab" style="-fx-background-color: #00BCD4;" text="      ENVIAR" textFill="WHITE">
+            <JFXButton fx:id="btnEnviar" buttonType="RAISED" layoutY="-4.0" onAction="#btnEnviar" prefHeight="31.0" prefWidth="86.0" ripplerFill="#0278ab" style="-fx-background-color: #00BCD4;" text="      ENVIAR" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -31,14 +31,14 @@
             </ImageView>
          </children>
       </Pane>
-      <JFXTextField focusColor="#00bcd4" layoutX="9.0" layoutY="602.0" prefHeight="25.0" prefWidth="781.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="101.0">
+      <JFXTextField fx:id="msgField" focusColor="#00bcd4" layoutX="9.0" layoutY="602.0" prefHeight="25.0" prefWidth="781.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="101.0">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
       <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="14.0" layoutY="38.0" prefHeight="558.0" prefWidth="871.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0">
          <content>
-            <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="105.0" prefWidth="822.0" />
+            <VBox fx:id="chatPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="105.0" prefWidth="822.0" />
          </content>
       </ScrollPane>
       <Pane layoutX="14.0" layoutY="9.0" style="-fx-border-radius: 300;" />
