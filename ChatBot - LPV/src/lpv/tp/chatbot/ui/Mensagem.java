@@ -51,8 +51,6 @@ public class Mensagem extends VBox {
 		return cor;
 	}
 
-
-
 	public void adicionarConteudo(Node conteudo){
 		pane.getChildren().add(conteudo);
 		pane.setPadding(new Insets(10,10,10,10));
@@ -66,15 +64,6 @@ public class Mensagem extends VBox {
 			pane.setMaxWidth((double) newVal/2);
 		});
 
-
-
-
 	}
-
-
-
-
-
-
 
 }

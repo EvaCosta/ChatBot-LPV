@@ -11,9 +11,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import lpv.tp.chatbot.ui.Mensagem;
 import lpv.tp.chatbot.ui.Mensagem.TipoMensagem;
+import lpv.tp.chatbot.watson.IntegracaoWatson;
 
 public class ChatBotController {
-
+	IntegracaoWatson integracaoWatson;
 	@FXML private VBox chatPane;
 	@FXML private TextField msgField;
 	@FXML private Button btnEnviar;
@@ -29,8 +30,6 @@ public class ChatBotController {
 				mainScene = msgField.getScene();
 				enviarMensagem();
 			}
-
-
 		});
 	}
 
@@ -45,6 +44,7 @@ public class ChatBotController {
 	private void enviarMensagem(){
 		if(msgField.getText().length() > 0 && !msgField.getText().matches("\\s*")){
 			chatPane.getChildren().add(new Mensagem(TipoMensagem.PERGUNTA, new Label(msgField.getText().trim())));
+			integracaoWatson = new IntegracaoWatson(msgField.getText());
 		}
 		msgField.setText("");
 	}
