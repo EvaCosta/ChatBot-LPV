@@ -15,7 +15,7 @@ public class Main extends Application {
 		try {
 			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/lpv/tp/chatbot/fxml/ChatBot.fxml"));
 			Scene scene = new Scene(root,891,641);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/lpv/tp/chatbot/css/application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("ChatBot JavaFX");
 			primaryStage.show();
