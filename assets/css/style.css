@@ -1,0 +1,24 @@
+*{
+	font-family: sans-serif;
+}
+.btn-primary{
+	 background-color: white !important;
+	color:black !important;
+}
+.btn-primary:hover{
+	 background-color: #03A9F4;
+	
+}
+
+#about{
+	background-color: #0288D1 !important;	
+}
+.link{
+	color:white !important;
+}
+.nav-link:hover{
+	color: #00BCD4 !important;
+}
+.navbar-brand:hover{
+	color: #00BCD4 !important;	
+}
