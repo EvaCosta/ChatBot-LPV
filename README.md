@@ -15,6 +15,6 @@ O chatbot é composto de informações sobre componentes visuais do JavaFX.
   <li><a href=https://github.com/danielsf2>Daniel Soares Ferreira</a></li>
   <li><a href=https://github.com/carlosguimaraes10>Carlos Guimarães de Jesus Filho</a></li>
   <li><a href=https://github.com/carlosrjr>Carlos Roberto Junior</a></li>
-  <li><a href=https://github.com/guimagnus>Guilherme Magnus</a></li>
+  <li><a href=https://github.com/guimagnus>Guilherme Magnus Felipe de Oliveira</a></li>
 
 </ul>
