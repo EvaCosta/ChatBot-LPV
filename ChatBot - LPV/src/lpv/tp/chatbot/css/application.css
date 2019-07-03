@@ -1,1 +1,14 @@
-/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.scroll-pane .corner {
+    -fx-background-color: black;
+}
+
+.accordion .titled-pane > *.content{
+    -fx-background-color: transparent ;
+    -fx-border-width: transparent;
+}
+.accordion .titled-pane .title {
+    -fx-background-color: transparent ;
+}
+.label{
+-fx-text-fill: white;
+}

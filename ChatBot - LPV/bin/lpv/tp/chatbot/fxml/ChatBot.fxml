@@ -21,7 +21,7 @@
          <children>
             <JFXButton fx:id="btnEnviar" buttonType="RAISED" layoutY="-4.0" onAction="#btnEnviar" prefHeight="31.0" prefWidth="86.0" ripplerFill="#0278ab" style="-fx-background-color: #00BCD4;" text="      ENVIAR" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="11.0" />
                </font>
             </JFXButton>
             <ImageView disable="true" fitHeight="25.0" fitWidth="23.0" focusTraversable="true" layoutX="7.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" rotate="-24.0">
@@ -36,9 +36,9 @@
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="14.0" layoutY="38.0" prefHeight="558.0" prefWidth="871.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0">
+      <ScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="AS_NEEDED" layoutX="14.0" layoutY="38.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0">
          <content>
-            <VBox fx:id="chatPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="105.0" prefWidth="822.0" />
+            <VBox fx:id="chatPane" minHeight="-Infinity" minWidth="-Infinity" prefWidth="822.0" />
          </content>
       </ScrollPane>
       <Pane layoutX="14.0" layoutY="9.0" style="-fx-border-radius: 300;" />
