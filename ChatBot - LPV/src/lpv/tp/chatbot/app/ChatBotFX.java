@@ -17,6 +17,8 @@ public class ChatBotFX extends Application {
 			Scene scene = new Scene(root,891,641);
 			scene.getStylesheets().add(getClass().getResource("/lpv/tp/chatbot/css/application.css").toExternalForm());
 			primaryStage.setScene(scene);
+			primaryStage.setMinHeight(641 + 40);
+			primaryStage.setMinWidth(891 + 40);
 			primaryStage.setTitle("ChatBot JavaFX");
 			primaryStage.show();
 		} catch(Exception e) {
