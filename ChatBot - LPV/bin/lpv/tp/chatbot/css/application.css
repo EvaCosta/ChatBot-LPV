@@ -22,3 +22,7 @@
 .scroll-pane .viewport{
 	-fx-background-color: #fff
 }
+
+.menu-item .label {
+	-fx-text-fill: #000;
+}

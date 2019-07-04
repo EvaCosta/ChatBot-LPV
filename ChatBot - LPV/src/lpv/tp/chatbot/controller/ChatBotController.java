@@ -29,6 +29,7 @@ import lpv.tp.chatbot.classes.CampoTexto;
 import lpv.tp.chatbot.classes.ComponentePesquisado;
 import lpv.tp.chatbot.classes.Imagem;
 import lpv.tp.chatbot.classes.PainelSplit;
+import lpv.tp.chatbot.classes.Rotulo;
 import lpv.tp.chatbot.classes.VerticalBox;
 import lpv.tp.chatbot.thread.ThreadVerificarConexao;
 import lpv.tp.chatbot.ui.Mensagem;
