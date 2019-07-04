@@ -2,7 +2,7 @@ package lpv.tp.chatbot.classes;
 
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.web.WebView;
+import javafx.scene.layout.VBox;
 
 public class VerticalBox extends ComponentePesquisado {
 
@@ -31,19 +31,31 @@ public class VerticalBox extends ComponentePesquisado {
 
 	@Override
 	public Label descricao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public WebView exemplo() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Label("classe pública VBox\r\n" + 
+				"estende o painel\r\n" + 
+				"\r\n" + 
+				"VBox coloca seus filhos em uma única coluna vertical. Se o vbox tiver um conjunto "
+				+ "\nde borda e / ou preenchimento, o conteúdo será colocado dentro desses inserções.\r\n" + 
+				"\r\n" + 
+				"O VBox redimensionará os filhos (se redimensionáveis) para suas alturas preferidas e usará "
+				+ "\nsua propriedade fillWidth para determinar se redimensionar suas larguras para preencher "
+				+ "\nsua própria largura ou manter suas larguras em seus preferenciais (fillWidth assume como true). "
+				+ "\nO alinhamento do conteúdo é controlado pela propriedade de alinhamento, cujo padrão é Pos.TOP_LEFT.\r\n" + 
+				"\r\n" + 
+				"Se um vbox for redimensionado maior que sua altura preferida, por padrão, ele manterá as crianças "
+				+ "\nem suas alturas preferidas, deixando o espaço extra não utilizado. Se um aplicativo desejar "
+				+ "\nque um ou mais filhos sejam alocados nesse espaço extra, ele pode opcionalmente definir uma "
+				+ "\nrestrição de vgrow no filho. Consulte \"Restrições de layout opcionais\" para detalhes.");
 	}
 
 	@Override
 	public Node componente() {
-		// TODO Auto-generated method stub
-		return null;
+		VBox box = new VBox();
+		box.setSpacing(5);
+		box.setLayoutX(10);
+		box.setLayoutY(10);
+		box.getChildren().add(new Label("Info 1"));
+		box.getChildren().add(new Label("Info 2"));
+		return box;
 	}
 }

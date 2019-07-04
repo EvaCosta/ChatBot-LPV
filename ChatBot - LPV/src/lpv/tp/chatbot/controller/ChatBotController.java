@@ -1,19 +1,12 @@
 package lpv.tp.chatbot.controller;
 
-import java.io.IOException;
 import java.util.HashMap;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 import com.ibm.watson.assistant.v2.model.MessageResponse;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -23,8 +16,13 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import lpv.tp.chatbot.classes.BarraMenu;
 import lpv.tp.chatbot.classes.Botao;
+import lpv.tp.chatbot.classes.BotaoRadio;
 import lpv.tp.chatbot.classes.ComponentePesquisado;
+import lpv.tp.chatbot.classes.PainelSplit;
+import lpv.tp.chatbot.classes.Rotulo;
+import lpv.tp.chatbot.classes.VerticalBox;
 import lpv.tp.chatbot.ui.Mensagem;
 import lpv.tp.chatbot.ui.Mensagem.TipoMensagem;
 import lpv.tp.chatbot.watson.IntegracaoWatson;
@@ -50,6 +48,11 @@ public class ChatBotController {
 		componentes = new HashMap<String, ComponentePesquisado>();
 		
 		componentes.put("Button", new Botao());
+		componentes.put("MenuBar", new BarraMenu());
+		componentes.put("RadioButton",new BotaoRadio());
+		componentes.put("VBox", new VerticalBox());
+		componentes.put("Label", new Rotulo());
+		componentes.put("SplitPane", new PainelSplit());
 		
 		msgField.addEventHandler(KeyEvent.KEY_PRESSED, (e)->{
 			if(e.getCode() == KeyCode.ENTER){
@@ -105,12 +108,12 @@ public class ChatBotController {
 			chatPane.getChildren().add(msg);
 		}
 		else { // Resposta sobre um componente
-			msg.adicionarConteudoExpandivel("DescriÃ§Ã£o", componentes.get(messageResponse.getOutput().getGeneric().get(0).getText()).descricao());
-			msg.adicionarConteudoExpandivel("CÃ³digo", componentes.get(messageResponse.getOutput().getGeneric().get(0).getText()).exemplo());
-			msg.adicionarConteudoExpandivel("Exemplo", componentes.get(messageResponse.getOutput().getGeneric().get(0).getText()).componente());
+			msg.adicionarConteudoExpandivel("Descrição", componentes.get(messageResponse.getOutput().getEntities().get(0).getValue()).descricao());
+			msg.adicionarConteudoExpandivel("Código", componentes.get(messageResponse.getOutput().getEntities().get(0).getValue()).exemplo());
+			msg.adicionarConteudoExpandivel("Exemplo", componentes.get(messageResponse.getOutput().getEntities().get(0).getValue()).componente());
 
+			msg.adicionarConteudo(messageResponse.getOutput().getGeneric().get(1).getText());
 			chatPane.getChildren().add(msg);
-			printResposta(integracaoWatson.enviarMensagem(""));
 		}
 		
 	}

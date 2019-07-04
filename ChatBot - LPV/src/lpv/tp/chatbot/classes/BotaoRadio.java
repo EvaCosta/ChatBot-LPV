@@ -2,7 +2,7 @@ package lpv.tp.chatbot.classes;
 
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.web.WebView;
+import javafx.scene.control.RadioButton;
 
 public class BotaoRadio extends ComponentePesquisado {
 	
@@ -16,35 +16,32 @@ public class BotaoRadio extends ComponentePesquisado {
 		exemploCodigo.append("\n");
 		exemploCodigo.append("/*Exemplo de como criar um componente JavaFx RadioButton.*/");
 		exemploCodigo.append("\n");
-		exemploCodigo.append(" RadioButton meuRadioButton = new RadioButton(); /*Cria o botão rádio*/");
+		exemploCodigo.append("/*Cria o botão rádio*/\nRadioButton meuRadioButton = new RadioButton();");
 		exemploCodigo.append("\n\n");
-		exemploCodigo.append("/* Faremos um botão rádio com o texto \"Concordo com os termos de uso\"*/");
-		exemploCodigo.append("\nmeuRadioButton2.setText(\"Concordo com os termos de uso\");");
-		exemploCodigo.append("\n\n");
-		exemploCodigo.append("/*O botão rádio pode disparar um evento de clique o tratamento pode ser feito da seguinte forma*/");
+		exemploCodigo.append("/*Faremos um botão rádio com o texto \"Concordo com os termos de uso\"*/");
+		exemploCodigo.append("\nmeuRadioButton.setText(\"Concordo com os termos de uso\");");
 		exemploCodigo.append("\n");
-		exemploCodigo.append("meuRadioButton.setOnAction(new EventHandler<ActionEvent>() {\n");
-		exemploCodigo.append("	@Override\n	public void handle(ActionEvent event) {\n");
-		exemploCodigo.append("		/*Aqui vai o código da função que deve ser executada*/\n	}\n});");
 		return exemploCodigo.toString();
 	}//toString()
 
 	@Override
 	public Label descricao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public WebView exemplo() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Label("RadioButtons cria uma série de itens onde apenas um item pode ser selecionado. "
+				+ "\nOs RadioButtons são um ToggleButton especializado. Quando um RadioButton é pressionado e "
+				+ "\nliberado, um ActionEvent é enviado. Seu aplicativo pode executar alguma ação com base nesse "
+				+ "\nevento, implementando um EventHandler para processar o ActionEvent.\r\n" + 
+				"\r\n" + 
+				"Apenas um RadioButton pode ser selecionado quando colocado em um ToggleGroup. Clicar em um RadioButton \n"
+				+ "selecionado não terá efeito. Um RadioButton que não está em um ToggleGroup pode ser selecionado e "
+				+ "\ndesmarcado. Por padrão, um RadioButton não está em um ToggleGroup. Chamar ToggleGroup.getSelectedToggle () "
+				+ "\nretornará o RadioButton que foi selecionado.");
 	}
 
 	@Override
 	public Node componente() {
-		// TODO Auto-generated method stub
-		return null;
+		RadioButton meuRadioButton = new RadioButton();
+		meuRadioButton.setText("Concordo com os termos de uso");
+		return meuRadioButton;
 	}
 	
 	

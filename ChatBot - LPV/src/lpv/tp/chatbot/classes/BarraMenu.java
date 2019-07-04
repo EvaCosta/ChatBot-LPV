@@ -1,7 +1,10 @@
 package lpv.tp.chatbot.classes;
 
 import javafx.scene.Node;
-import javafx.scene.web.WebView;
+import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 
 public class BarraMenu extends ComponentePesquisado {	
 	
@@ -28,20 +31,19 @@ public class BarraMenu extends ComponentePesquisado {
 	}//toString()
 
 	@Override
-	public javafx.scene.control.Label descricao() {
-		// TODO Auto-generated method stub
-		return null;
+	public Label descricao() {
+		return new Label("Um controle MenuBar tradicionalmente é colocado no topo da interface do usuário, \n"
+				+ "e incorporado a ele são Menus. Para adicionar um menu a uma barra de menus, adicione-o aos \n"
+				+ "menus ObservableList. Por padrão, para cada menu adicionado à barra de menus, ele será \n"
+				+ "representado como um botão com o valor do texto do menu exibido.");
 	}
 
-	@Override
-	public WebView exemplo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public Node componente() {
-		// TODO Auto-generated method stub
-		return null;
+		MenuBar minhaMenuBar = new MenuBar();
+		minhaMenuBar.getMenus().add(new Menu("Arquivo"));
+		minhaMenuBar.getMenus().get(0).getItems().add(new MenuItem("Fechar"));
+		return minhaMenuBar;
 	}
 }

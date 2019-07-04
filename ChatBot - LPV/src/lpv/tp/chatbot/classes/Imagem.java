@@ -2,6 +2,7 @@ package lpv.tp.chatbot.classes;
 
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.web.WebView;
 
 /**
@@ -22,35 +23,52 @@ public class Imagem extends ComponentePesquisado{
 		conteudo.append("\n");
 		conteudo.append("/*Exemplo de como criar um componente JavaFx ImageView.*/");
 		conteudo.append("\n");
-		conteudo.append("ImageView minhaImagem = new ImageView(); /*Você deve dar um nome ao objeto imagem e inicia-lo.*/");
-		conteudo.append("\n\n");
-		conteudo.append("/*Define sua image como não redimensionável em caso de true e redimensionável em caso de false*/");
+		conteudo.append("/*Você deve dar um nome ao objeto imagem e inicia-lo.*/\nImageView minhaImagem = new ImageView();");
+		conteudo.append("\n");
+		conteudo.append("/*Define sua image como não redimensionável em caso \n*de true e redimensionável em caso de false*/");
 		conteudo.append("\n");
 		conteudo.append("minhaImagem.setPreserveRatio(true);");
-		conteudo.append("\n\n");
-		conteudo.append("/*Você deve especificar o caminho onde sua imagem que será exibida esta armazenada como um objeto String.*/");
 		conteudo.append("\n");
-		conteudo.append("minhaImagem.getClass().getResourceAsStream(\"caminho onde esta armazenada a imagem\");");
-		conteudo.append("\n\n");
+		conteudo.append("/*Você deve especificar o caminho onde sua imagem \n*que será exibida esta armazenada como um objeto String.*/");
+		conteudo.append("\n");
+		conteudo.append("minhaImagem.getClass().getResourceAsStream(\"caminho da imagem\");");
+		conteudo.append("\n");
 		
 		return conteudo.toString();
 	}//toString
 
 	@Override
 	public Label descricao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public WebView exemplo() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Label("classe pública Image\r\n" + 
+				"estende o objeto\r\n" + 
+				"\r\n" + 
+				"A classe Image representa imagens gráficas e é usada para "
+				+ "\ncarregar imagens de um URL especificado.\r\n" + 
+				"\r\n" + 
+				"Formatos de imagem suportados são:\r\n" + 
+				"\r\n" + 
+				"    BMP\r\n" + 
+				"    GIF\r\n" + 
+				"    JPEG\r\n" + 
+				"    PNG\r\n" + 
+				"\r\n" + 
+				"As imagens podem ser redimensionadas à medida que são carregadas "
+				+ "\n(por exemplo, para reduzir a quantidade de memória consumida pela imagem). "
+				+ "\nO aplicativo pode especificar a qualidade da filtragem usada ao dimensionar "
+				+ "\ne preservar ou não a proporção da imagem original.\r\n" + 
+				"\r\n" + 
+				"Todas as URLs suportadas pela URL podem ser passadas para o construtor. "
+				+ "\nSe a sequência passada não for uma URL válida, mas sim um caminho, a Imagem será pesquisada no caminho de classe nesse caso.\r\n" + 
+				"\r\n" + 
+				"Use o ImageView para exibir imagens carregadas com esta classe. "
+				+ "\nA mesma instância de imagem pode ser exibida por vários ImageViews.");
 	}
 
 	@Override
 	public Node componente() {
-		// TODO Auto-generated method stub
+		ImageView minhaImagem = new ImageView();
+		minhaImagem.setPreserveRatio(true);
+		//minhaImagem.getClass().getResourceAsStream(\"caminho da imagem\");
 		return null;
 	}
 

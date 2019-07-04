@@ -3,8 +3,6 @@ package lpv.tp.chatbot.classes;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.web.WebView;
-import lpv.tp.chatbot.webview.CodePrettify;
 
 public class Botao extends ComponentePesquisado {
 
@@ -36,29 +34,13 @@ public class Botao extends ComponentePesquisado {
 		exemploCodigo.append("\n");
 		exemploCodigo.append(" Button meuButton = new Button(); /*Cria o botão*/");
 		exemploCodigo.append("\n\n");
-		exemploCodigo.append("/* Faremos um botão que seria utilizado para enviar dados de um formulário\n* Sendo assim definimos o texto do botão como \"Enviar\"\n*/");
+		exemploCodigo.append("/* Faremos um botão com o texto \"Clique aqui!\" \n*/");
 		exemploCodigo.append("\n");
-		exemploCodigo.append("meuButton.setText(\"Enviar\")");
-		exemploCodigo.append("\n\n");
-		exemploCodigo.append("/*O botão pode disparar um evento de clique o tratamento pode ser feito da seguinte forma*/");
+		exemploCodigo.append("meuButton.setText(\"Clique aqui!\")");
 		exemploCodigo.append("\n");
-		exemploCodigo.append("meuButton.setOnAction(new EventHandler<ActionEvent>() {\n");
-		exemploCodigo.append("	@Override\n	public void handle(ActionEvent event) {\n");
-		exemploCodigo.append("		/*Aqui vai o código da função que deve ser executada*/\n	}\n});");
 		return exemploCodigo.toString();
 	}//toString()
 
-	@Override
-	public WebView exemplo() {
-		WebView webView = new WebView();
-		
-		CodePrettify.loadWebView(webView, this.toString().replace("\n", "<br />"));
-		
-		webView.setMaxHeight(300);
-	
-		
-		return webView;
-	}
 
 	@Override
 	public Node componente() {
