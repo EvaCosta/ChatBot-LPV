@@ -13,7 +13,6 @@ public class BotaoRadio extends ComponentePesquisado {
 	@Override
 	public String toString() {
 		StringBuilder exemploCodigo = new StringBuilder();
-		exemploCodigo.append("\n");
 		exemploCodigo.append("/*Exemplo de como criar um componente JavaFx RadioButton.*/");
 		exemploCodigo.append("\n");
 		exemploCodigo.append("/*Cria o botão rádio*/\nRadioButton meuRadioButton = new RadioButton();");

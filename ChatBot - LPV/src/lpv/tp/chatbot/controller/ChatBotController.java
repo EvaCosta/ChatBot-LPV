@@ -16,10 +16,13 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import lpv.tp.chatbot.classes.AreaTexto;
 import lpv.tp.chatbot.classes.BarraMenu;
 import lpv.tp.chatbot.classes.Botao;
 import lpv.tp.chatbot.classes.BotaoRadio;
+import lpv.tp.chatbot.classes.CampoTexto;
 import lpv.tp.chatbot.classes.ComponentePesquisado;
+import lpv.tp.chatbot.classes.Imagem;
 import lpv.tp.chatbot.classes.PainelSplit;
 import lpv.tp.chatbot.classes.Rotulo;
 import lpv.tp.chatbot.classes.VerticalBox;
@@ -50,9 +53,12 @@ public class ChatBotController {
 		componentes.put("Button", new Botao());
 		componentes.put("MenuBar", new BarraMenu());
 		componentes.put("RadioButton",new BotaoRadio());
-		componentes.put("VBox", new VerticalBox());
+		componentes.put("Vbox", new VerticalBox());
 		componentes.put("Label", new Rotulo());
 		componentes.put("SplitPane", new PainelSplit());
+		componentes.put("TextArea", new AreaTexto());
+		componentes.put("TextField", new CampoTexto());
+		componentes.put("ImageView", new Imagem());
 		
 		msgField.addEventHandler(KeyEvent.KEY_PRESSED, (e)->{
 			if(e.getCode() == KeyCode.ENTER){
@@ -112,7 +118,7 @@ public class ChatBotController {
 			msg.adicionarConteudoExpandivel("Código", componentes.get(messageResponse.getOutput().getEntities().get(0).getValue()).exemplo());
 			msg.adicionarConteudoExpandivel("Exemplo", componentes.get(messageResponse.getOutput().getEntities().get(0).getValue()).componente());
 
-			msg.adicionarConteudo(messageResponse.getOutput().getGeneric().get(1).getText());
+			msg.adicionarConteudo(messageResponse.getOutput().getGeneric().get(0).getText().split("\n")[1]);
 			chatPane.getChildren().add(msg);
 		}
 		

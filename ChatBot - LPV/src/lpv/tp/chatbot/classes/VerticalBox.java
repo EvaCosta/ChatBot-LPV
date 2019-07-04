@@ -13,19 +13,16 @@ public class VerticalBox extends ComponentePesquisado {
 	@Override
 	public String toString() {
 		StringBuilder exemploCodigo = new StringBuilder();
+		exemploCodigo.append("/*Cria a Vertical Box*/\n VBox box = new VBox();");
 		exemploCodigo.append("\n");
-		exemploCodigo.append("/*Exemplo de como criar um componente JavaFx VBox para organização vertical de componentes na interface gráfica.*/");
+		exemploCodigo.append("/*Estabelecendo um espaçamento entre os componentes da Vertical Box*/");
+		exemploCodigo.append("\n box.setSpacing(5);");
 		exemploCodigo.append("\n");
-		exemploCodigo.append(" VBox box = new VBox(); /*Cria a Vertical Box*/");
-		exemploCodigo.append("\n\n");
-		exemploCodigo.append("/*Pode ser estabelecido um espaçamento entre os componentes da Vertical Box*/");
-		exemploCodigo.append("\nbox.setSpacing(5);");
-		exemploCodigo.append("\n\n");
-		exemploCodigo.append("/*Pode ser estabelecido também a posição da Vertical Box dentro de seu conteiner*/");
-		exemploCodigo.append("\nbox.setLayoutX(10);\nbox.setLayoutY(10);");
-		exemploCodigo.append("\n\n");
-		exemploCodigo.append("/*E então adicionar os componentes na Vertical Box no exemplo foram usados dois Labels*/");
-		exemploCodigo.append("\nbox.getChildren().add(new Label(\"Info 1\"));\nbox.getChildren().add(new Label(\"Info 2\"));");
+		exemploCodigo.append("/*Estabelecendo a posição da Vertical Box dentro de seu conteiner*/");
+		exemploCodigo.append("\n box.setLayoutX(10);\nbox.setLayoutY(10);");
+		exemploCodigo.append("\n");
+		exemploCodigo.append("/*E então adicionar os componentes na Vertical Box no\n exemplo foram usados dois Labels*/");
+		exemploCodigo.append("\n box.getChildren().add(new Label(\"Info 1\"));\n box.getChildren().add(new Label(\"Info 2\"));");
 		return exemploCodigo.toString();
 	}//toString()
 

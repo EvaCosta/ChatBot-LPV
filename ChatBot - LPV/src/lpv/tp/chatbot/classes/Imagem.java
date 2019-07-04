@@ -3,7 +3,6 @@ package lpv.tp.chatbot.classes;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.web.WebView;
 
 /**
  * Ensina ao usuário como criar um componente ImageView
@@ -23,15 +22,15 @@ public class Imagem extends ComponentePesquisado{
 		conteudo.append("\n");
 		conteudo.append("/*Exemplo de como criar um componente JavaFx ImageView.*/");
 		conteudo.append("\n");
-		conteudo.append("/*Você deve dar um nome ao objeto imagem e inicia-lo.*/\nImageView minhaImagem = new ImageView();");
+		conteudo.append("/*Você deve dar um nome ao objeto imagem e inicia-lo.*/\n ImageView minhaImagem = new ImageView();");
 		conteudo.append("\n");
 		conteudo.append("/*Define sua image como não redimensionável em caso \n*de true e redimensionável em caso de false*/");
 		conteudo.append("\n");
-		conteudo.append("minhaImagem.setPreserveRatio(true);");
+		conteudo.append(" minhaImagem.setPreserveRatio(true);");
 		conteudo.append("\n");
 		conteudo.append("/*Você deve especificar o caminho onde sua imagem \n*que será exibida esta armazenada como um objeto String.*/");
 		conteudo.append("\n");
-		conteudo.append("minhaImagem.getClass().getResourceAsStream(\"caminho da imagem\");");
+		conteudo.append(" minhaImagem.getClass().getResourceAsStream(\"caminho da imagem\");");
 		conteudo.append("\n");
 		
 		return conteudo.toString();
@@ -68,11 +67,7 @@ public class Imagem extends ComponentePesquisado{
 	public Node componente() {
 		ImageView minhaImagem = new ImageView();
 		minhaImagem.setPreserveRatio(true);
-		//minhaImagem.getClass().getResourceAsStream(\"caminho da imagem\");
-		return null;
+		minhaImagem.getClass().getResourceAsStream("/img/bot.png");
+		return minhaImagem;
 	}
-
-	
-	
-	
 }//class Imagem 

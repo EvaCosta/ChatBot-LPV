@@ -1,7 +1,9 @@
 package lpv.tp.chatbot.classes;
 
 import javafx.scene.Node;
-import javafx.scene.web.WebView;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 
 public class Alerta extends ComponentePesquisado{
 
@@ -39,20 +41,13 @@ public class Alerta extends ComponentePesquisado{
 	}//toString
 
 	@Override
-	public javafx.scene.control.Label descricao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public WebView exemplo() {
+	public Label descricao() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Node componente() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
