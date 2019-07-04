@@ -23,10 +23,10 @@ public class IntegracaoWatson {
 	}
 
 	public void usoIntegracaoWatson(String mensagem) {
-		config =  new BasicAuthConfig.Builder().username(Consts.LOGIN).password(Consts.PASSWORD).build();
-		assistant = new Assistant(Consts.VERSION_DATE, config);
-		assistant.setEndPoint(Consts.URL);
-		options = new CreateSessionOptions.Builder(Consts.ASSISTANT_ID).build();
+		config =  new BasicAuthConfig.Builder().username(ConstsExample.LOGIN).password(ConstsExample.PASSWORD).build();
+		assistant = new Assistant(ConstsExample.VERSION_DATE, config);
+		assistant.setEndPoint(ConstsExample.URL);
+		options = new CreateSessionOptions.Builder(ConstsExample.ASSISTANT_ID).build();
 		response = assistant.createSession(options).execute().getResult();
 		
 		input = new MessageInput.Builder()
@@ -34,7 +34,7 @@ public class IntegracaoWatson {
 				.build();
 		
 		MessageOptions messageOptions = new MessageOptions.Builder()
-				.assistantId(Consts.ASSISTANT_ID)
+				.assistantId(ConstsExample.ASSISTANT_ID)
 				.sessionId(response.getSessionId())
 				.input(input).build();
 		

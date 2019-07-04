@@ -4,11 +4,21 @@
 
 .accordion .titled-pane > *.content{
     -fx-background-color: transparent ;
-    -fx-border-width: transparent;
+    -fx-border-color: transparent;
 }
 .accordion .titled-pane .title {
     -fx-background-color: transparent ;
+     -fx-border-color: transparent;
 }
 .label{
 -fx-text-fill: white;
+}
+
+#barraDeTitulo {
+	-fx-text-fill: white;
+	-fx-background-color: #0288D1
+} 
+
+.scroll-pane .viewport{
+	-fx-background-color: #fff
 }

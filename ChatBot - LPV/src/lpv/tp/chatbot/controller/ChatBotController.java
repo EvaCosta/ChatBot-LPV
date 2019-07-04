@@ -9,6 +9,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import lpv.tp.chatbot.ui.Mensagem;
 import lpv.tp.chatbot.ui.Mensagem.TipoMensagem;
@@ -20,6 +21,7 @@ public class ChatBotController {
 	@FXML private TextField msgField;
 	@FXML private Button btnEnviar;
 	@FXML private ScrollPane scrollPane;
+	@FXML private AnchorPane barraDeTitulo;
 	
 	private static double chatPaneWidth = 0;
 	private static Scene mainScene;

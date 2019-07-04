@@ -6,6 +6,9 @@ import javafx.scene.Node;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import lpv.tp.chatbot.controller.ChatBotController;
@@ -15,32 +18,41 @@ public class Mensagem extends VBox {
 		PERGUNTA, RESPOSTA
 	}
 
-	private Color cor;
+	private Color cor, corTexto;
 	private VBox pane = new VBox();
 	private TipoMensagem tipoMensagem;
 	private Accordion accordion;
 
 	public Mensagem(TipoMensagem tipoMensagem){
 		this.tipoMensagem = tipoMensagem;
-		estilizarCSS(tipoMensagem);
+		estilizarMensagem(tipoMensagem);
+		getChildren().add(pane);
 	}
 
-	private void estilizarCSS(TipoMensagem tipoMensagem) {
-		getChildren().add(pane);
+	private void estilizarMensagem(TipoMensagem tipoMensagem) {
+		
 		setFillWidth(false);
 		
 		if(tipoMensagem == TipoMensagem.PERGUNTA){
-			cor = Color.rgb(179, 229, 252);
+			cor = Color.rgb(0, 188, 212);
+			corTexto = Color.web("#fff");
+			
+			pane.setBackground(new Background(new BackgroundFill(cor, new CornerRadii(5), Insets.EMPTY)));
+			
 			setAlignment(Pos.CENTER_RIGHT);
+		
 			setMargin(pane, new Insets(10, 10, 0, 0));
-			pane.setStyle("-fx-background-color: rgb(0, 188, 212)");
+			
 		}else if(tipoMensagem == TipoMensagem.RESPOSTA){
-			cor = Color.rgb(240, 244, 195);
+			cor = Color.web("#8BC34A");
+			corTexto = Color.web("#FFF");
 			setAlignment(Pos.CENTER_LEFT);
-			setMargin(pane, new Insets(10, 0, 0, 10));
-			pane.setStyle("-fx-background-color: rgb(123,104,238)");
+			
+			pane.setBackground(new Background(new BackgroundFill(cor, new CornerRadii(5), new Insets(1, 0, 0, 10))));
+			
 
 		}
+		pane.setStyle(String.format("-fx-text-fill: rgb(%s, %s, %s)", corTexto.getRed(), corTexto.getGreen(), corTexto.getBlue()));
 		pane.applyCss();
 
 	}
@@ -84,18 +96,12 @@ public class Mensagem extends VBox {
 			
 			if(accordion != null) {
 				accordion.setPrefWidth((double)newVal / 2);
-				percorrerAccordion( (double) newVal/2);
 			}
 		});
 
 	}
 	
-	private void percorrerAccordion(double d) {
-		for(Node node : accordion.getChildrenUnmodifiable()) {
-			for(Node p : ((TitledPane)node).getChildrenUnmodifiable())
-			if(node instanceof Label)((Label)p).setText("SHASHKJDHSKJDHK");
-		}
-	}
+	
 
 	public void adicionarConteudoExpandivel(String titulo, Node... conteudos) {
 		VBox vbox = new VBox();
