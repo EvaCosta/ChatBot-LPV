@@ -1,11 +1,13 @@
 package lpv.tp.chatbot.classes;
 
-public class BotaoRadio extends ConteudoPesquisado {
+import javafx.scene.Node;
+import javafx.scene.control.Label;
+import javafx.scene.web.WebView;
+
+public class BotaoRadio extends ComponentePesquisado {
 	
 	public BotaoRadio(){
 		super();
-		this.setDescricaoComponente("RadioButton");
-		this.setIdPaneExibicaoImagem("");
 	}
 	
 	@Override
@@ -26,6 +28,24 @@ public class BotaoRadio extends ConteudoPesquisado {
 		exemploCodigo.append("		/*Aqui vai o código da função que deve ser executada*/\n	}\n});");
 		return exemploCodigo.toString();
 	}//toString()
+
+	@Override
+	public Label descricao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public WebView exemplo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Node componente() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }

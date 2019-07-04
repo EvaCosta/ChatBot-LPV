@@ -1,11 +1,12 @@
 package lpv.tp.chatbot.classes;
 
-public class AreaTexto extends ConteudoPesquisado{
+import javafx.scene.Node;
+import javafx.scene.web.WebView;
+
+public class AreaTexto extends ComponentePesquisado{
 
 	public AreaTexto() {
 		super();
-		this.setDescricaoComponente("TextArea");
-		this.setIdPaneExibicaoImagem("");
 	}
 
 	@Override
@@ -30,5 +31,23 @@ public class AreaTexto extends ConteudoPesquisado{
 		conteudo.append("\n");
 		return conteudo.toString();
 	}//toString()
+
+	@Override
+	public javafx.scene.control.Label descricao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public WebView exemplo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Node componente() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }//class AreaTexto

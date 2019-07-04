@@ -1,11 +1,12 @@
 package lpv.tp.chatbot.classes;
 
-public class Alerta extends ConteudoPesquisado{
+import javafx.scene.Node;
+import javafx.scene.web.WebView;
+
+public class Alerta extends ComponentePesquisado{
 
 	public Alerta() {
 		super();
-		this.setDescricaoComponente("CheckBox");
-		this.setIdPaneExibicaoImagem("");
 	}
 
 	@Override
@@ -36,5 +37,23 @@ public class Alerta extends ConteudoPesquisado{
 		conteudo.append("\n");
 		return conteudo.toString();
 	}//toString
+
+	@Override
+	public javafx.scene.control.Label descricao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public WebView exemplo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Node componente() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }//class CaixaDeSelecao 

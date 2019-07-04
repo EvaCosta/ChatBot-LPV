@@ -1,11 +1,12 @@
 package lpv.tp.chatbot.classes;
 
-public class BarraMenu extends ConteudoPesquisado {	
+import javafx.scene.Node;
+import javafx.scene.web.WebView;
+
+public class BarraMenu extends ComponentePesquisado {	
 	
 	public BarraMenu(){
 		super();
-		this.setDescricaoComponente("MenuBar");
-		this.setIdPaneExibicaoImagem("");
 	}
 	
 	@Override
@@ -25,4 +26,22 @@ public class BarraMenu extends ConteudoPesquisado {
 		exemploCodigo.append("/* O processo se repete para acrescentar mais Menus e MenusItems devendo \n* apenas ter atenção na função getMenus().get(index) qual é o Menu que receberá o MenuItem\n*/");
 		return exemploCodigo.toString();
 	}//toString()
+
+	@Override
+	public javafx.scene.control.Label descricao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public WebView exemplo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Node componente() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

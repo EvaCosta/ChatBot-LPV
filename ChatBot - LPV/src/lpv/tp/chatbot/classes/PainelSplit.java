@@ -1,11 +1,13 @@
 package lpv.tp.chatbot.classes;
 
-public class PainelSplit extends ConteudoPesquisado {
+import javafx.scene.Node;
+import javafx.scene.control.Label;
+import javafx.scene.web.WebView;
+
+public class PainelSplit extends ComponentePesquisado {
 
 	public PainelSplit(){
 		super();
-		this.setDescricaoComponente("SplitPane");
-		this.setIdPaneExibicaoImagem("");
 	}
 
 	@Override
@@ -21,4 +23,22 @@ public class PainelSplit extends ConteudoPesquisado {
 
 		return exemploCodigo.toString();
 	}//toString()
+
+	@Override
+	public Label descricao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public WebView exemplo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Node componente() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

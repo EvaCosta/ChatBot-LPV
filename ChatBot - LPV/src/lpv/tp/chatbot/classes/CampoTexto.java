@@ -1,11 +1,13 @@
 package lpv.tp.chatbot.classes;
 
-public class CampoTexto extends ConteudoPesquisado{
+import javafx.scene.Node;
+import javafx.scene.control.Label;
+import javafx.scene.web.WebView;
+
+public class CampoTexto extends ComponentePesquisado{
 
 	public CampoTexto() {
 		super();
-		this.setDescricaoComponente("TextField");
-		this.setIdPaneExibicaoImagem("");
 	}
 
 	@Override
@@ -30,5 +32,23 @@ public class CampoTexto extends ConteudoPesquisado{
 		conteudo.append("\n");
 		return conteudo.toString();
 	}//toString()
+
+	@Override
+	public Label descricao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public WebView exemplo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Node componente() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }//class CampoTexto

@@ -5,5 +5,6 @@
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
 	<classpathentry kind="lib" path="jar/jfoenix-8.0.8.jar"/>
 	<classpathentry kind="lib" path="jar/ibm-watson.jar"/>
+	<classpathentry kind="lib" path="jar/jsoup-1.12.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

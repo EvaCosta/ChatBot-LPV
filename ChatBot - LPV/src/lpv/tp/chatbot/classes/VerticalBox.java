@@ -1,11 +1,13 @@
 package lpv.tp.chatbot.classes;
 
-public class VerticalBox extends ConteudoPesquisado {
+import javafx.scene.Node;
+import javafx.scene.control.Label;
+import javafx.scene.web.WebView;
+
+public class VerticalBox extends ComponentePesquisado {
 
 	public VerticalBox(){
 		super();
-		this.setDescricaoComponente("VBox");
-		this.setIdPaneExibicaoImagem("");
 	}
 
 	@Override
@@ -26,4 +28,22 @@ public class VerticalBox extends ConteudoPesquisado {
 		exemploCodigo.append("\nbox.getChildren().add(new Label(\"Info 1\"));\nbox.getChildren().add(new Label(\"Info 2\"));");
 		return exemploCodigo.toString();
 	}//toString()
+
+	@Override
+	public Label descricao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public WebView exemplo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Node componente() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

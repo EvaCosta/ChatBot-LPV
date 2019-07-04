@@ -5,6 +5,7 @@ import com.ibm.watson.assistant.v2.Assistant;
 import com.ibm.watson.assistant.v2.model.CreateSessionOptions;
 import com.ibm.watson.assistant.v2.model.MessageInput;
 import com.ibm.watson.assistant.v2.model.MessageOptions;
+import com.ibm.watson.assistant.v2.model.MessageOutput;
 import com.ibm.watson.assistant.v2.model.MessageResponse;
 import com.ibm.watson.assistant.v2.model.SessionResponse;
 
@@ -17,38 +18,24 @@ public class IntegracaoWatson {
 	
 	
 	
-	public IntegracaoWatson(String mensagem) {
-		System.out.println(mensagem);
-		usoIntegracaoWatson(mensagem);
+	public IntegracaoWatson() {
+		config =  new BasicAuthConfig.Builder().username(Consts.LOGIN).password(Consts.PASSWORD).build();
+		assistant = new Assistant(Consts.VERSION_DATE, config);
+		assistant.setEndPoint(Consts.URL);
+		options = new CreateSessionOptions.Builder(Consts.ASSISTANT_ID).build();
+		response = assistant.createSession(options).execute().getResult();
 	}
 
-	public void usoIntegracaoWatson(String mensagem) {
-		config =  new BasicAuthConfig.Builder().username(ConstsExample.LOGIN).password(ConstsExample.PASSWORD).build();
-		assistant = new Assistant(ConstsExample.VERSION_DATE, config);
-		assistant.setEndPoint(ConstsExample.URL);
-		options = new CreateSessionOptions.Builder(ConstsExample.ASSISTANT_ID).build();
-		response = assistant.createSession(options).execute().getResult();
-		
+	public MessageResponse enviarMensagem(String mensagem) {
 		input = new MessageInput.Builder()
 				.text(mensagem)
 				.build();
 		
 		MessageOptions messageOptions = new MessageOptions.Builder()
-				.assistantId(ConstsExample.ASSISTANT_ID)
+				.assistantId(Consts.ASSISTANT_ID)
 				.sessionId(response.getSessionId())
 				.input(input).build();
 		
-		MessageResponse messageResponse = assistant.message(messageOptions).execute().getResult();
-		
-		System.out.println(messageResponse);
-
+		return assistant.message(messageOptions).execute().getResult();
 	}
-
-	
-	
-	
-
-
-	
-
 }

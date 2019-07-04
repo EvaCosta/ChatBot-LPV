@@ -84,18 +84,18 @@ public class Mensagem extends VBox {
 	public void adicionarConteudo(Node conteudo){
 		pane.getChildren().add(conteudo);
 		pane.setPadding(new Insets(10,10,10,10));
-		pane.setMaxWidth(ChatBotController.getChatPaneWidth()/2);
+		pane.setMaxWidth(ChatBotController.getChatPaneWidth()-200);
 
 		setMargin(conteudo, new Insets(0,0,0,10));
 
 
 		if(conteudo instanceof Label)((Label)conteudo).setWrapText(true);
 		ChatBotController.getMainScene().getWindow().widthProperty().addListener((obs, oldVal, newVal) -> {
-			pane.setMaxWidth((double) newVal/2);
+			pane.setMaxWidth((double) newVal-200);
 			ChatBotController.setChatPaneWidth((double) newVal);
 			
 			if(accordion != null) {
-				accordion.setPrefWidth((double)newVal / 2);
+				accordion.setPrefWidth((double)newVal - 200);
 			}
 		});
 
@@ -123,7 +123,7 @@ public class Mensagem extends VBox {
 		if(!(node instanceof Label)) return false;
 		Label label = (Label) node;
 		label.setWrapText(true);
-		label.setPrefWidth(ChatBotController.getChatPaneWidth()/2);
+		label.setPrefWidth(ChatBotController.getChatPaneWidth()-200);
 		
 		resizeElement(label);
 		return true;
@@ -131,7 +131,7 @@ public class Mensagem extends VBox {
 	
 	private void resizeElement(Label n) {
 		ChatBotController.getMainScene().getWindow().widthProperty().addListener((obs, oldVal, newVal) -> {
-			n.setMaxWidth(ChatBotController.getChatPaneWidth()/2);
+			n.setMaxWidth(ChatBotController.getChatPaneWidth()-200);
 		});
 	}
 

@@ -1,16 +1,18 @@
 package lpv.tp.chatbot.classes;
 
+import javafx.scene.Node;
+import javafx.scene.control.Label;
+import javafx.scene.web.WebView;
+
 /**
  * Ensina ao usuário como criar um componente ImageView
  * @author Daniel Soares Ferreira
  *
  */
-public class Imagem extends ConteudoPesquisado{
+public class Imagem extends ComponentePesquisado{
 
 	public Imagem() {
 		super();
-		this.setDescricaoComponente("ImageView");
-		this.setIdPaneExibicaoImagem("");
 	}
 
 	@Override
@@ -33,6 +35,24 @@ public class Imagem extends ConteudoPesquisado{
 		
 		return conteudo.toString();
 	}//toString
+
+	@Override
+	public Label descricao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public WebView exemplo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Node componente() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	
 	

@@ -1,4 +1,4 @@
-package application;
+package lpv.tp.chatbot.app;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,7 +7,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 
-public class Main extends Application {
+public class ChatBotFX extends Application {
 	private static Scene mainScene;
 
 	@Override
