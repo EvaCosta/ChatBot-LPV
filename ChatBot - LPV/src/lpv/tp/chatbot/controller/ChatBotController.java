@@ -3,6 +3,7 @@ package lpv.tp.chatbot.controller;
 import java.util.HashMap;
 
 import com.ibm.watson.assistant.v2.model.MessageResponse;
+import com.ibm.watson.assistant.v2.model.RuntimeEntity;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -64,7 +65,6 @@ public class ChatBotController {
 		componentes = new HashMap<String, ComponentePesquisado>();
 
 		componentes.put("Button", new Botao());
-
 		componentes.put("MenuBar", new BarraMenu());
 		componentes.put("RadioButton",new BotaoRadio());
 		componentes.put("Vbox", new VerticalBox());
@@ -74,12 +74,7 @@ public class ChatBotController {
 		componentes.put("TextField", new CampoTexto());
 		componentes.put("ImageView", new Imagem());										  
 											 
-										 
-												  
-											   
-												 
-											 
-  
+		
 		msgField.addEventHandler(KeyEvent.KEY_PRESSED, (e)->{
 			if(e.getCode() == KeyCode.ENTER){
 				mainScene = msgField.getScene();
@@ -144,22 +139,27 @@ public class ChatBotController {
 		System.out.println(messageResponse);
 
 		Mensagem msg = new Mensagem(TipoMensagem.RESPOSTA);
-
-		// Mensagem genÃ©rica, nÃ£o se trata de um componente
-		if (messageResponse.getOutput().getEntities().isEmpty()) {
-			msg.adicionarConteudo(messageResponse.getOutput().getGeneric().get(0).getText());
-			chatPane.getChildren().add(msg);
+		msg.adicionarConteudo(messageResponse.getOutput().getGeneric().get(0).getText());
+		
+		
+		// Resposta sobre um componente
+		if (!messageResponse.getOutput().getEntities().isEmpty()) {
+			RuntimeEntity entity = messageResponse.getOutput().getEntities().get(0);
+			
+			if (entity.getEntity().equalsIgnoreCase("Componente")) {
+				Mensagem msgComponente = new Mensagem(TipoMensagem.RESPOSTA);
+				ComponentePesquisado componentePesquisado = componentes.get(entity.getValue());
+						
+				msgComponente.adicionarConteudoExpandivel("Descriï¿½ï¿½o", componentePesquisado.descricao());
+				msgComponente.adicionarConteudoExpandivel("Cï¿½digo", componentePesquisado.exemplo());
+				msgComponente.adicionarConteudoExpandivel("Exemplo", componentePesquisado.componente());
+	
+				chatPane.getChildren().add(msgComponente);
+			}
 		}
-		else { // Resposta sobre um componente
-		msg.adicionarConteudoExpandivel("Descrição", componentes.get(messageResponse.getOutput().getEntities().get(0).getValue()).descricao());
-		msg.adicionarConteudoExpandivel("Código", componentes.get(messageResponse.getOutput().getEntities().get(0).getValue()).exemplo());
-		msg.adicionarConteudoExpandivel("Exemplo", componentes.get(messageResponse.getOutput().getEntities().get(0).getValue()).componente());
-
-																								   
-			chatPane.getChildren().add(msg);
-			printResposta(integracaoWatson.enviarMensagem(""));
-		}
-
+		
+		
+		chatPane.getChildren().add(msg);
 	}
 
 	public static double getChatPaneWidth() {
@@ -169,30 +169,22 @@ public class ChatBotController {
 	public static void setChatPaneWidth(double width) {
 		chatPaneWidth = width;
 	}
- 
-
 
 	public static Scene getMainScene() {
 		return mainScene;
 	}
 
 	public void exibirProblemaConexao() {
-		
-		System.err.println("entrei");
 		iconeConexao.setFill(Color.web(corIconeDesconectado));
-		msgField.setText("Parece que você está sem internet :(");
+		msgField.setText("Parece que vocï¿½ estï¿½ sem internet :(");
 		msgField.setStyle("-fx-text-inner-color: " + corIconeDesconectado);
 		msgField.applyCss();
 		msgField.setEditable(false);
 		btnEnviar.setDisable(true);
 
-
 		if(conectado)ligarBlur();
 		
 		conectado = false;
-		
-
-
 	}
 	
 
@@ -208,7 +200,6 @@ public class ChatBotController {
 		corBlur.setInput(blurEffect);
 		chatPane.setEffect(corBlur);
 		blur = true;
-
 	}
 
 
@@ -225,8 +216,6 @@ public class ChatBotController {
 		
 		desligarBlur();
 		conectado = true;
-
-		// scene.setFill(scene.getFill() == Color.BLACK ? null : Color.BLACK);
 
 	}
 

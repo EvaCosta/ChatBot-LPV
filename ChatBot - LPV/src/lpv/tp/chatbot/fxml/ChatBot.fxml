@@ -68,6 +68,9 @@
          <content>
             <VBox fx:id="chatPane" minHeight="-Infinity" minWidth="-Infinity" prefWidth="822.0" />
          </content>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
       </ScrollPane>
       <Pane layoutX="14.0" layoutY="9.0" style="-fx-border-radius: 300;" />
    </children>

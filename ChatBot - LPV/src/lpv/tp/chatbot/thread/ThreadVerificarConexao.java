@@ -12,7 +12,7 @@ public class ThreadVerificarConexao extends Thread{
 	private ChatBotController controller;
 
 	public ThreadVerificarConexao(ChatBotController controller) {
-		super("Thread Verificar Conexão");
+		super("Thread Verificar Conexï¿½o");
 		this.controller = controller;
 
 		setDaemon(true);
@@ -25,19 +25,16 @@ public class ThreadVerificarConexao extends Thread{
 				final URL url = new URL("http://www.google.com");
 				final URLConnection conn = url.openConnection();
 				
-				conn.setReadTimeout(2000);
-				conn.setConnectTimeout(2000);
+				conn.setReadTimeout(4000);
+				conn.setConnectTimeout(4000);
 				
 				conn.connect();
 				conn.getInputStream().close();
 				msgConectado();
 			} catch (MalformedURLException e) {
-				System.err.println(e);
 				throw new RuntimeException(e);
 			} catch (IOException e) {
-				System.err.println(e);
 				msgSemConexao();
-
 			}
 
 			try {
@@ -52,24 +49,14 @@ public class ThreadVerificarConexao extends Thread{
 		Platform.runLater(() -> {
 			controller.exibirProblemaConexao();
 			controller.setConectado(false);
-			
-			
 		});
-		
-		
-		System.err.println("Desconectado");
 	}
 
 	private void msgConectado() {
 		Platform.runLater(() -> {
-			
 			controller.exibirConexaoAtiva();
 			controller.setConectado(true);
 		});
-		
-		
-		
-		System.err.println("Conectado");
 	}
 
 

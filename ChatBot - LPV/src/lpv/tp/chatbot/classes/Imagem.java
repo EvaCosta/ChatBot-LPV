@@ -22,15 +22,12 @@ public class Imagem extends ComponentePesquisado{
 		conteudo.append("\n");
 		conteudo.append("/*Exemplo de como criar um componente JavaFx ImageView.*/");
 		conteudo.append("\n");
-		conteudo.append("/*Você deve dar um nome ao objeto imagem e inicia-lo.*/\n ImageView minhaImagem = new ImageView();");
+		conteudo.append("/*Você deve dar um nome ao objeto imagem e inicia-lo, especificando o caminho de sua imagem que será exibida.*/\n"
+				+ "ImageView minhaImagem = new ImageView(getClass().getResource(\"CAMINHO_DA_IMAGEM\").toString());");
 		conteudo.append("\n");
 		conteudo.append("/*Define sua image como não redimensionável em caso \n*de true e redimensionável em caso de false*/");
 		conteudo.append("\n");
 		conteudo.append(" minhaImagem.setPreserveRatio(true);");
-		conteudo.append("\n");
-		conteudo.append("/*Você deve especificar o caminho onde sua imagem \n*que será exibida esta armazenada como um objeto String.*/");
-		conteudo.append("\n");
-		conteudo.append(" minhaImagem.getClass().getResourceAsStream(\"caminho da imagem\");");
 		conteudo.append("\n");
 		
 		return conteudo.toString();
@@ -65,9 +62,8 @@ public class Imagem extends ComponentePesquisado{
 
 	@Override
 	public Node componente() {
-		ImageView minhaImagem = new ImageView();
+		ImageView minhaImagem = new ImageView("file:///" + System.getProperty("user.dir") + "\\img\\bot.png");
 		minhaImagem.setPreserveRatio(true);
-		minhaImagem.getClass().getResourceAsStream("/img/bot.png");
 		return minhaImagem;
 	}
 }//class Imagem 
