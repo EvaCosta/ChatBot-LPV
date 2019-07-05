@@ -1,8 +1,9 @@
-# ChatBot-LPV
-O chatbot é composto de informações sobre componentes visuais do JavaFX.
+# FXBOT
+<i>O Chatbot que te ajuda a criar vários componentes FX com uma simples pergunta</i>
 
-<a href="https://evacosta.github.io/ChatBot-LPV/">ChatBot Page</a>
-
+<a href="https://evacosta.github.io/ChatBot-LPV/">FXBot Page</a>
+## Sobre
+<p>Projeto desenvolvido no curso de <b>Tecnologia em Sistemas para Internet</b> pertencente ao <b>IF Sudeste MG Barbacena</b> na disciplina de <b>Linguagem de Programação Visual</b> ministrada pelo professor <a href="https://github.com/rafjaa">Rafael Alencar</a> em 2019.</p> 
 
 ## Equipe  
  
