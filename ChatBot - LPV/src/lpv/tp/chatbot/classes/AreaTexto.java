@@ -30,9 +30,7 @@ public class AreaTexto extends ComponentePesquisado{
 
 	@Override
 	public Label descricao() {
-		return new Label("public class TextArea\r\n" + 
-				"estende o TextInputControl\r\n" + 
-				"\r\n" + 
+		return new Label(
 				"Componente de entrada de texto que permite que um usuário insira várias linhas "
 				+ "\nde texto simples. Ao contrário das versões anteriores do JavaFX, o suporte "
 				+ "\npara entrada de linha única não está disponível como parte do controle "
@@ -53,7 +51,7 @@ public class AreaTexto extends ComponentePesquisado{
 	@Override
 	public Node componente() {
 		TextArea meuTextArea = new TextArea();
-		meuTextArea.setText("Conteúdo que eu quero exibir em meuTextArea");
+		meuTextArea.setText("Conteúdo a ser inserido sem meuTextArea");
 		meuTextArea.setEditable(true);
 		return meuTextArea;
 	}

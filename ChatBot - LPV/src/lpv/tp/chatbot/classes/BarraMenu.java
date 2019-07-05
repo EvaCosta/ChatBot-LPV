@@ -41,7 +41,7 @@ public class BarraMenu extends ComponentePesquisado {
 		MenuBar minhaMenuBar = new MenuBar();
 		minhaMenuBar.getMenus().add(new Menu("Arquivo"));
 		minhaMenuBar.getMenus().get(0).setStyle(".-fx-text-fill: black");
-	//	minhaMenuBar.setStyle("-fx-text-fill: black");
+		minhaMenuBar.setStyle("-fx-text-fill: black");
 		minhaMenuBar.getMenus().get(0).getItems().add(new MenuItem("Fechar"));
 		minhaMenuBar.applyCss();
 		return minhaMenuBar;

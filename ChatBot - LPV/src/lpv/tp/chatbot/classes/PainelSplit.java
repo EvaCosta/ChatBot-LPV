@@ -1,8 +1,12 @@
 package lpv.tp.chatbot.classes;
 
+
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 
 public class PainelSplit extends ComponentePesquisado {
 
@@ -26,15 +30,23 @@ public class PainelSplit extends ComponentePesquisado {
 
 	@Override
 	public Label descricao() {
-		return new Label("public class Label\r\n" + 
-				"estende a classe Labeled\r\n" + 
-				"\r\n" + 
-				"Label é um controle de texto não editável. Um rótulo (label) é útil para exibir "
-				+ "n\texto necessário para caber em um espaço específico e, portanto, "
-				+ "\npode precisar usar reticências ou truncamento para dimensionar a "
-				+ "\nseqüência de caracteres. Os rótulos também são úteis porque podem "
-				+ "\nter mnemônicos que, se usados, enviarão foco para o Controle "
-				+ "\nlistado como o destino da propriedade labelFor.");
+		return new Label(new StringBuilder("Um controle que tem dois ou mais lados, cada um separado por um divisor, que pode ser")
+				.append("arrastado pelo usuário para dar mais espaço a um dos lados, resultando no outro lado encolhendo em uma")
+				.append("quantidade igual.\n")
+				.append("Os nós podem ser posicionados horizontalmente um ao lado do outro ou empilhados verticalmente. Isso "
+						+ "pode ser controlado pela configuração orientationProperty()")
+				.append("Os divisores em um SplitPane têm o seguinte comportamento:\n")
+
+				.append(" - Os divisores não podem se sobrepor a outro divisor\n")
+				.append(" - Divisores não podem se sobrepor a um nó.\n")
+				.append(" - Os divisores que se movem para a esquerda / topo param quando o tamanho mínimo do nó é atingido.\n")
+				.append(" - Os divisores que se movem para a direita / inferior param quando o tamanho máximo do nó é atingido.\n")
+				.append("Os nós precisam ser colocados dentro de um contêiner de layout antes"
+						+ " de serem adicionados ao SplitPane. Se o nó não estiver dentro de um contêiner de layout,"
+						+ " a posição máxima e mínima do divisor será o tamanho máximo e mínimo do conteúdo.\n")
+				.append("\nSaiba mais em: https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/SplitPane.html")
+				.toString());
+
 	}
 
 	@Override
@@ -53,7 +65,10 @@ public class PainelSplit extends ComponentePesquisado {
 		label3.setStyle(estilo);
 		label3.applyCss();
 		
-		SplitPane meuSplitPane = new SplitPane(label1, label2, label3);
+		ImageView minhaImagem = new ImageView("file:///" + System.getProperty("user.dir") + "\\img\\bot.png");
+		minhaImagem.setPreserveRatio(true);
+		
+		SplitPane meuSplitPane = new SplitPane(new VBox(label1, minhaImagem), new VBox(label2, new Button("Teste")), label3);
 
 		return meuSplitPane;
 	}

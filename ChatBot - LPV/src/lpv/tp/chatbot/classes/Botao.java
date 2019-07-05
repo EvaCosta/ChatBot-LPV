@@ -12,14 +12,13 @@ public class Botao extends ComponentePesquisado {
 	
 	@Override
 	public Label descricao() {
-		return new Label("classe pública Button\r\n" + 
-				"estende o ButtonBase\r\n" + 
+		return new Label(
+				"Um simples componente de botão. Um botão pode conter texto e / ou gráfico (imagem)."
+				+ "Ele pode ter três modos diferentes\r\n" + 
 				"\r\n" + 
-				"Um simples controle de botão. O controle de botão pode conter texto e / ou gráfico. Um botão de controle tem três modos diferentes\r\n" + 
-				"\r\n" + 
-				"     Normal: um botão normal.\r\n" + 
-				"     Padrão: Um botão padrão é o botão que recebe um teclado VK_ENTER, se nenhum outro nó na cena o consumir.\r\n" + 
-				"     Cancelar: Um botão Cancelar é o botão que recebe um teclado VK_ESC, se nenhum outro nó na cena o consumir.\r\n" + 
+				"     Normal:   um botão normal.\r\n" + 
+				"     Padrão:   um botão que recebe um evento de teclado VK_ENTER (tecla ENTER).\r\n" + 
+				"     Cancelar: um botão recebe um teclado VK_ESC (tecla ESC).\r\n" + 
 				"\r\n" + 
 				"Quando um botão é pressionado e liberado, um ActionEvent é enviado. Seu aplicativo pode executar alguma ação com base nesse evento, implementando um EventHandler para processar o ActionEvent. Os botões também podem responder a eventos de mouse implementando um EventHandler para processar o MouseEvent\r\n" + 
 				"\r\n" + 

@@ -26,3 +26,8 @@
 .menu-item .label {
 	-fx-text-fill: #000;
 }
+
+.menu-button,
+.menu .label{
+    -fx-text-fill: black;
+}

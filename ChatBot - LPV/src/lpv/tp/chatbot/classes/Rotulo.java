@@ -2,6 +2,7 @@ package lpv.tp.chatbot.classes;
 
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
 public class Rotulo extends ComponentePesquisado{
@@ -30,10 +31,7 @@ public class Rotulo extends ComponentePesquisado{
 
 	@Override
 	public Label descricao() {
-		return new Label("public class Label\r\n" + 
-				"estende etiquetado\r\n" + 
-				"\r\n" + 
-				"Label é um controle de texto não editável. Um rótulo é útil para exibir texto necessário "
+		return new Label("Label é um componente de texto não editável. Um rótulo (label) é útil para exibir o texto necessário "
 				+ "\npara caber em um espaço específico e, portanto, pode precisar usar reticências "
 				+ "\nou truncamento para dimensionar a seqüência de caracteres. Os rótulos também são úteis "
 				+ "\nporque podem ter mnemônicos que, se usados, enviarão foco para o Controle listado como "
@@ -44,8 +42,8 @@ public class Rotulo extends ComponentePesquisado{
 	public Node componente() {
 		Label meuLabel = new Label();
 		meuLabel.setFont(new Font("Verdana Bold", 20));
-		meuLabel.setText("Conteúdo que eu desejo exibir");
-		return meuLabel;
+		meuLabel.setText("Isto é um label com fonte Verdana, 20");
+		return new VBox(meuLabel, new Label("Isto é um label com fonte padrão"));
 	}
 
 }//class Botao

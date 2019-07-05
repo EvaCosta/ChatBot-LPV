@@ -37,14 +37,12 @@ public class BotaoDeAlternancia extends ComponentePesquisado{
 
 	@Override
 	public Label descricao() {
-		return new Label("public class ToggleButton\n" + 
-						 "extends ButtonBase\n" + 
-						 "implements Toggle\n" + 
-						 "Um ToggleButton é um controle especializado que tem a capacidade de ser selecionado. "
-						 + "Normalmente, um ToggleButton é renderizado de forma semelhante a um botão. "
-						 + "No entanto, eles são dois tipos diferentes de controles. Um botão é um botão de "
-						 + "'comando\" que invoca uma função quando clicado. Um ToggleButton, por outro lado,"
-						 + " é simplesmente um controle com um booleano, indicando se ele foi selecionado.");
+		return new Label(
+						 "Um ToggleButton é como um botão especial que tem a capacidade de ser selecionado "
+						 + "sendo normalmente, de forma semelhante a eles (botões). "
+						 + "No entanto, um botão realiza um comando, invoca uma função quando clicado. "
+						 + "Já um ToggleButton, por outro lado, é simplesmente um controle com um booleano, "
+						 + "indicando se ele foi selecionado.");
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 package lpv.tp.chatbot.classes;
 
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
@@ -22,27 +23,21 @@ public class VerticalBox extends ComponentePesquisado {
 		exemploCodigo.append("\n box.setLayoutX(10);\nbox.setLayoutY(10);");
 		exemploCodigo.append("\n");
 		exemploCodigo.append("/*E então adicionar os componentes na Vertical Box no\n exemplo foram usados dois Labels*/");
-		exemploCodigo.append("\n box.getChildren().add(new Label(\"Info 1\"));\n box.getChildren().add(new Label(\"Info 2\"));");
+		exemploCodigo.append("\n box.getChildren().add(new Label(\"Item 1: Label 1\"));\n "
+				+ "box.getChildren().add(new Label(\"Item 2: Label 2\"));"
+				+ "\\n box.getChildren().add(new Button(\\\"Item 3: Button 1\\\"));");
 		return exemploCodigo.toString();
 	}//toString()
 
 	@Override
 	public Label descricao() {
-		return new Label("classe pública VBox\r\n" + 
-				"estende o painel\r\n" + 
-				"\r\n" + 
-				"VBox coloca seus filhos em uma única coluna vertical. Se o vbox tiver um conjunto "
-				+ "\nde borda e / ou preenchimento, o conteúdo será colocado dentro desses inserções.\r\n" + 
-				"\r\n" + 
-				"O VBox redimensionará os filhos (se redimensionáveis) para suas alturas preferidas e usará "
-				+ "\nsua propriedade fillWidth para determinar se redimensionar suas larguras para preencher "
-				+ "\nsua própria largura ou manter suas larguras em seus preferenciais (fillWidth assume como true). "
-				+ "\nO alinhamento do conteúdo é controlado pela propriedade de alinhamento, cujo padrão é Pos.TOP_LEFT.\r\n" + 
-				"\r\n" + 
-				"Se um vbox for redimensionado maior que sua altura preferida, por padrão, ele manterá as crianças "
-				+ "\nem suas alturas preferidas, deixando o espaço extra não utilizado. Se um aplicativo desejar "
+		return new Label("VBox  é um painél que que permite inserir outros Nodes (compoentes filhos) "
+				+ "em uma única coluna vertical. "
+				+ "Se um vbox for redimensionado maior que sua altura preferencias  (pref height), por padrão, ele manterá os nós filhos "
+				+ "\nem suas alturas preferencias, deixando o espaço extra não utilizado. Se um programa desejar "
 				+ "\nque um ou mais filhos sejam alocados nesse espaço extra, ele pode opcionalmente definir uma "
-				+ "\nrestrição de vgrow no filho. Consulte \"Restrições de layout opcionais\" para detalhes.");
+				+ "\nrestrição de vgrow (crescimento vertical) nos nós filhos.\n"
+				+ "Consulte \"Restrições de layout opcionais\" para detalhes.");
 	}
 
 	@Override
@@ -51,8 +46,9 @@ public class VerticalBox extends ComponentePesquisado {
 		box.setSpacing(5);
 		box.setLayoutX(10);
 		box.setLayoutY(10);
-		box.getChildren().add(new Label("Info 1"));
-		box.getChildren().add(new Label("Info 2"));
+		box.getChildren().add(new Label("Item 1: Label 1"));
+		box.getChildren().add(new Label("Item 2: Label 2"));
+		box.getChildren().add(new Button("Item 3: Button 1"));
 		return box;
 	}
 }
