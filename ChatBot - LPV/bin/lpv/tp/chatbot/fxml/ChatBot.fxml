@@ -40,7 +40,7 @@
             </HBox>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Ellipse fx:id="iconeConexao" fill="#8bc34a" layoutX="15.0" layoutY="25.0" radiusX="7.0" radiusY="7.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="16.0" />
+                  <Ellipse fx:id="iconeConexao" fill="#8bc34a" layoutX="15.0" layoutY="25.0" radiusX="7.0" radiusY="7.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="17.0" />
                </children>
             </AnchorPane>
          </children>
@@ -64,7 +64,7 @@
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <ScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="AS_NEEDED" layoutX="1.0" layoutY="38.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="45.0">
+      <ScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="AS_NEEDED" layoutX="1.0" layoutY="38.0" style="-fx-border-color: transparent;" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="47.0">
          <content>
             <VBox fx:id="chatPane" minHeight="-Infinity" minWidth="-Infinity" prefWidth="822.0" />
          </content>
