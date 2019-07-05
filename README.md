@@ -5,6 +5,18 @@
 ## Sobre
 <p>Projeto desenvolvido no curso de <b>Tecnologia em Sistemas para Internet</b> pertencente ao <b>IF Sudeste MG Barbacena</b> na disciplina de <b>Linguagem de Programação Visual</b> ministrada pelo professor <a href="https://github.com/rafjaa">Rafael Alencar</a> em 2019.</p> 
 
+<p align="center">
+  <img src="https://github.com/EvaCosta/ChatBot-LPV/blob/master/ChatBot%20-%20LPV/img/telaInicial.png" width="600"/>
+</p>
+
+<p>Execução do programa após realizar uma pesquisa</p>
+
+
+<p align="center">
+  <img src="https://github.com/EvaCosta/ChatBot-LPV/blob/master/ChatBot%20-%20LPV/img/tela_resposta.png" width="600"/>
+</p>
+
+
 ## Equipe  
  
  <ul>
