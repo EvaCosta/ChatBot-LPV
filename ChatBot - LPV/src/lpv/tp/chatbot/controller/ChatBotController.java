@@ -46,10 +46,10 @@ public class ChatBotController {
 	@FXML private ScrollPane scrollPane;
 	@FXML private AnchorPane barraDeTitulo;
 	@FXML private Ellipse iconeConexao;
-	
+
 	private ColorAdjust corBlur;
 	private GaussianBlur blurEffect;
-	
+
 	private boolean conectado;
 	private static boolean blur = false;
 	private HashMap<String, ComponentePesquisado> componentes;
@@ -76,7 +76,7 @@ public class ChatBotController {
 		componentes.put("TextField", new CampoTexto());
 		componentes.put("ImageView", new Imagem());
 		componentes.put("ToggleButton", new BotaoDeAlternancia());
-											 
+
 		msgField.addEventHandler(KeyEvent.KEY_PRESSED, (e)->{
 			if(e.getCode() == KeyCode.ENTER){
 				mainScene = msgField.getScene();
@@ -100,14 +100,14 @@ public class ChatBotController {
 		});
 
 		new ThreadVerificarConexao(this).start();
-		
+
 		adicionarTratadorEventoBlur();
 	}
 
 	private void adicionarTratadorEventoBlur() {
 		corBlur = new ColorAdjust(0, 1, -0.5, 0);
 		blurEffect = new GaussianBlur(50);
-		
+
 		scrollPane.addEventHandler(MouseEvent.MOUSE_ENTERED, (event) -> {
 			if(blur) desligarBlur();
 		});
@@ -142,25 +142,25 @@ public class ChatBotController {
 
 		Mensagem msg = new Mensagem(TipoMensagem.RESPOSTA);
 		msg.adicionarConteudo(messageResponse.getOutput().getGeneric().get(0).getText());
-		
+
 		// Resposta sobre um componente
 		if (!messageResponse.getOutput().getEntities().isEmpty()) {
 			RuntimeEntity entity = messageResponse.getOutput().getEntities().get(0);
-			
+
 			if (entity.getEntity().equalsIgnoreCase("Componente")) {
-			
+
 				Mensagem msgComponente = new Mensagem(TipoMensagem.RESPOSTA);
 				ComponentePesquisado componentePesquisado = componentes.get(entity.getValue());
-						
-				msgComponente.adicionarConteudoExpandivel("Descri��o", componentePesquisado.descricao());
-				msgComponente.adicionarConteudoExpandivel("C�digo", false, componentePesquisado.exemplo());
+
+				msgComponente.adicionarConteudoExpandivel("Descrição", componentePesquisado.descricao());
+				msgComponente.adicionarConteudoExpandivel("Código", false, componentePesquisado.exemplo());
 				msgComponente.adicionarConteudoExpandivel("Exemplo", false, componentePesquisado.componente());
-	
+
 				chatPane.getChildren().add(msgComponente);
 			}
 		}
-		
-		
+
+
 		chatPane.getChildren().add(msg);
 	}
 
@@ -178,17 +178,17 @@ public class ChatBotController {
 
 	public void exibirProblemaConexao() {
 		iconeConexao.setFill(Color.web(corIconeDesconectado));
-		msgField.setText("Parece que voc� est� sem internet :(");
+		msgField.setText("Parece que você está sem internet :(");
 		msgField.setStyle("-fx-text-inner-color: " + corIconeDesconectado);
 		msgField.applyCss();
 		msgField.setEditable(false);
 		btnEnviar.setDisable(true);
 
 		if(conectado)ligarBlur();
-		
+
 		conectado = false;
 	}
-	
+
 
 	private void desligarBlur() {
 		if(!blur) return;
@@ -198,7 +198,7 @@ public class ChatBotController {
 
 	private void ligarBlur() {
 		if(blur) return;
-		
+
 		corBlur.setInput(blurEffect);
 		chatPane.setEffect(corBlur);
 		blur = true;
@@ -215,7 +215,7 @@ public class ChatBotController {
 		btnEnviar.setDisable(false);
 		msgField.setStyle("-fx-text-inner-color: #000");
 
-		
+
 		desligarBlur();
 		conectado = true;
 

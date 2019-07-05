@@ -1,7 +1,9 @@
 package lpv.tp.chatbot.thread;
 
 import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.net.MalformedURLException;
+import java.net.Proxy;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -23,11 +25,11 @@ public class ThreadVerificarConexao extends Thread{
 			try {
 
 				final URL url = new URL("http://www.google.com");
-				final URLConnection conn = url.openConnection();
-				
+				final URLConnection conn = url.openConnection(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("10.0.0.254", 8080)));
+
 				conn.setReadTimeout(4000);
 				conn.setConnectTimeout(4000);
-				
+
 				conn.connect();
 				conn.getInputStream().close();
 				msgConectado();
