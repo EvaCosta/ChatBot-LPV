@@ -52,7 +52,7 @@ public class Mensagem extends VBox {
 			
 
 		}
-		pane.setStyle(String.format("-fx-text-fill: rgb(%s, %s, %s)", corTexto.getRed(), corTexto.getGreen(), corTexto.getBlue()));
+		pane.setStyle(String.format("-fx-text-fill: rgb(%s, %s, %s); -fx-font-size: 13px;", corTexto.getRed(), corTexto.getGreen(), corTexto.getBlue()));
 		pane.applyCss();
 
 	}
@@ -102,13 +102,19 @@ public class Mensagem extends VBox {
 	}
 	
 	
-
-	public void adicionarConteudoExpandivel(String titulo, Node... conteudos) {
+	/**Adiciona na mensagem conteúdos em um painel que pode ser expandido ou oculto (Accordion Pane)
+	 * 
+	 * @param titulo nome do painel
+	 * @param expandido true se o painel começa expandido, false caso contrário
+	 * @param conteudos componentes do JavaFx a serem inseridos
+	 */
+	public void adicionarConteudoExpandivel(String titulo, boolean expandido, Node... conteudos) {
 		VBox vbox = new VBox();
 		TitledPane titledPane = new TitledPane(titulo, vbox);
 		
 		accordion = new Accordion(titledPane);
-		accordion.setExpandedPane(titledPane);
+		
+		if(expandido) accordion.setExpandedPane(titledPane);
 		
 		for(Node node: conteudos) {
 			
@@ -118,6 +124,16 @@ public class Mensagem extends VBox {
 		adicionarConteudo(accordion);
 	}
 
+	/**Adiciona na mensagem conteúdos em um painel que pode ser expandido ou oculto (Accordion Pane)
+	 * 
+	 * @param titulo nome do painel
+	 * @param expandido true se o painel começa expandido, false caso contrário
+	 * @param conteudos componentes do JavaFx a serem inseridos
+	 */
+	public void adicionarConteudoExpandivel(String titulo,  Node... conteudos) {
+		adicionarConteudoExpandivel(titulo, true, conteudos);
+	}
+	
 	/**Formata um label. Se o node nÃ£o for um label, nÃ£o faz nada e retorna falso**/
 	private boolean formatarLabel(Node node) {
 		if(!(node instanceof Label)) return false;

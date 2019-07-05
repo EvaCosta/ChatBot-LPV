@@ -27,9 +27,9 @@ public class PainelSplit extends ComponentePesquisado {
 	@Override
 	public Label descricao() {
 		return new Label("public class Label\r\n" + 
-				"estende etiquetado\r\n" + 
+				"estende a classe Labeled\r\n" + 
 				"\r\n" + 
-				"Label é um controle de texto não editável. Um rótulo é útil para exibir "
+				"Label é um controle de texto não editável. Um rótulo (label) é útil para exibir "
 				+ "n\texto necessário para caber em um espaço específico e, portanto, "
 				+ "\npode precisar usar reticências ou truncamento para dimensionar a "
 				+ "\nseqüência de caracteres. Os rótulos também são úteis porque podem "
@@ -39,7 +39,22 @@ public class PainelSplit extends ComponentePesquisado {
 
 	@Override
 	public Node componente() {
-		SplitPane meuSplitPane = new SplitPane(new Label("Lado 1"),new Label("Lado 2"),new Label("Lado 3"));
+		String estilo = "-fx-text-fill: #000";
+		
+		Label label1 = new Label("Lado 1");
+		label1.setStyle(estilo);
+		label1.applyCss();
+		
+		Label label2 = new Label("Lado 2");
+		label2.setStyle(estilo);
+		label2.applyCss();
+		
+		Label label3 = new Label("Lado 3");
+		label3.setStyle(estilo);
+		label3.applyCss();
+		
+		SplitPane meuSplitPane = new SplitPane(label1, label2, label3);
+
 		return meuSplitPane;
 	}
 }

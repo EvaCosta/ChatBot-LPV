@@ -25,6 +25,7 @@ import javafx.scene.shape.Ellipse;
 import lpv.tp.chatbot.classes.AreaTexto;
 import lpv.tp.chatbot.classes.BarraMenu;
 import lpv.tp.chatbot.classes.Botao;
+import lpv.tp.chatbot.classes.BotaoDeAlternancia;
 import lpv.tp.chatbot.classes.BotaoRadio;
 import lpv.tp.chatbot.classes.CampoTexto;
 import lpv.tp.chatbot.classes.ComponentePesquisado;
@@ -48,6 +49,7 @@ public class ChatBotController {
 	
 	private ColorAdjust corBlur;
 	private GaussianBlur blurEffect;
+	
 	private boolean conectado;
 	private static boolean blur = false;
 	private HashMap<String, ComponentePesquisado> componentes;
@@ -72,9 +74,9 @@ public class ChatBotController {
 		componentes.put("SplitPane", new PainelSplit());
 		componentes.put("TextArea", new AreaTexto());
 		componentes.put("TextField", new CampoTexto());
-		componentes.put("ImageView", new Imagem());										  
+		componentes.put("ImageView", new Imagem());
+		componentes.put("ToggleButton", new BotaoDeAlternancia());
 											 
-		
 		msgField.addEventHandler(KeyEvent.KEY_PRESSED, (e)->{
 			if(e.getCode() == KeyCode.ENTER){
 				mainScene = msgField.getScene();
@@ -141,18 +143,18 @@ public class ChatBotController {
 		Mensagem msg = new Mensagem(TipoMensagem.RESPOSTA);
 		msg.adicionarConteudo(messageResponse.getOutput().getGeneric().get(0).getText());
 		
-		
 		// Resposta sobre um componente
 		if (!messageResponse.getOutput().getEntities().isEmpty()) {
 			RuntimeEntity entity = messageResponse.getOutput().getEntities().get(0);
 			
 			if (entity.getEntity().equalsIgnoreCase("Componente")) {
+			
 				Mensagem msgComponente = new Mensagem(TipoMensagem.RESPOSTA);
 				ComponentePesquisado componentePesquisado = componentes.get(entity.getValue());
 						
 				msgComponente.adicionarConteudoExpandivel("Descri��o", componentePesquisado.descricao());
-				msgComponente.adicionarConteudoExpandivel("C�digo", componentePesquisado.exemplo());
-				msgComponente.adicionarConteudoExpandivel("Exemplo", componentePesquisado.componente());
+				msgComponente.adicionarConteudoExpandivel("C�digo", false, componentePesquisado.exemplo());
+				msgComponente.adicionarConteudoExpandivel("Exemplo", false, componentePesquisado.componente());
 	
 				chatPane.getChildren().add(msgComponente);
 			}
