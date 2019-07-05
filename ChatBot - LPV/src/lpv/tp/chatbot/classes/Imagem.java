@@ -47,7 +47,7 @@ public class Imagem extends ComponentePesquisado{
 	public Node componente() {
 		Label label = new Label("Veja, sou eu!");
 		label.setStyle("-fx-text-fill: #000");
-		ImageView minhaImagem = new ImageView("file:///" + System.getProperty("user.dir") + "\\img\\bot.png");
+		ImageView minhaImagem = new ImageView("file:///" + System.getProperty("user.dir") + "/img/bot.png");
 		minhaImagem.setPreserveRatio(true);
 		return new VBox(minhaImagem, label);
 	}
